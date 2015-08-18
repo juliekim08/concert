@@ -15,19 +15,24 @@ venues = [
 ]
 venues.push({:name => 'Schubas', :url => "http://feeds.feedburner.com/SchubasCalendar?format=xml"})
 venues.push({:name => 'Metro', :url => "http://metrochicago.com/feed/"})
-
 venues.each do |venue_hash|
-  nokogiri_object = Nokogiri::XML(open("#{venue_hash[:url]}"))
-
-  nokogiri_object.css('item').each do |item|
-    v=Venue.new
-    v.name = venue_hash[:name]
-    v.date = item.css('pubDate').text
-    v.show = item.css('title').text
-    v.save
-  end
+Venue.create(venue_hash)
 end
 puts "#{Venue.count} venues are in the database"
+
+Event.destroy_all
+Venue.all.each do |venue|
+  nokogiri_object = Nokogiri::XML(open("#{venue.url}"))
+  nokogiri_object.css('item').each do |item|
+    e=Event.new
+    e.name = venue.name
+    e.venue_id = venue.id
+    e.date = item.css('pubDate').text.to_datetime.strftime('%a %b %d %Y %H:%M:%S %Z')
+    e.show = item.css('title').text
+    e.save
+  end
+end
+puts "#{Event.count} events are in the database"
 
 
 
