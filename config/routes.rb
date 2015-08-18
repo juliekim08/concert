@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'concert#search'
   get '/concert/search' => 'concert#search'
   get '/concert/metro' => 'concert#metro'
+  post '/results' => 'concert#results'
+
 
 
 

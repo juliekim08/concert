@@ -1,3 +1,7 @@
-<% @doc.xpath("//title").each do |show|%>
+<% @doc.css("title").each do |show|%>
+<li><%= show %></li>
+<% end %>
+
+<% @doc.css("pubDate").each do |show|%>
 <li><%= show %></li>
 <% end %>

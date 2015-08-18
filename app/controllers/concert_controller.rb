@@ -10,5 +10,10 @@ class ConcertController < ApplicationController
     @doc = Nokogiri::XML(open("http://metrochicago.com/feed/"))
   end
 
+  def results
+    @venue = Venue.find(params[:venue_id])
+    @doc = @venue.nokogiri_object
+  end
+
 end
 

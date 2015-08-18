@@ -1,24 +1,33 @@
-<div class="row">
+<%= @venue%>
+ <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Find a Concert</h3>
       </div>
       <div class="panel-body">
-        <%= form_tag '/concert/search', :method => "post", :class => "form-horizontal" do %>
+        <%= form_tag '/results', :method => "post", :class => "form-horizontal" do %>
           <!-- Label and input for user_id -->
           <div class="form-group">
             <label for="venue_id" class="col-sm-2 control-label">
               Venue
             </label>
             <div class="col-sm-10">
-              <input type="text" id="venue_id" name="venue_id" placeholder="Venue" class="form-control" value="test">
-              <!-- select_tag :venue_id, options_from_collection_for_select(Venue.all, :id, :name), class: 'form-control' -->
+              <%= select_tag :venue_id, options_from_collection_for_select(Venue.all, :id, :name), class: 'form-control' %>
+            </div>
+          </div>
+              <div class="form-group">
+            <label for="date" class="col-sm-2 control-label">
+              Date
+            </label>
+            <div class="col-sm-10">
+             <input type="text" class="form-control" name="num_items" id="num_items" placeholder="3">
+            </div>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <input type="submit" value="Create Comment" class="btn btn-success">
+              <input type="submit" value="Filter Shows" class="btn btn-success">
             </div>
           </div>
         <% end %>
