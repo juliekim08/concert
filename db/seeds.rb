@@ -27,7 +27,7 @@ Venue.all.each do |venue|
     e=Event.new
     e.name = venue.name
     e.venue_id = venue.id
-    e.date = item.css('pubDate').text.to_datetime.strftime('%a %b %d %Y %H:%M:%S %Z')
+    e.date = item.css('pubDate').text.to_datetime
     e.show = item.css('title').text
     e.save
   end

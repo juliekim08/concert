@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'nokogiri'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'activeadmin', github: 'activeadmin'
+gem 'chronic'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 
 
 # Use jquery as the JavaScript library

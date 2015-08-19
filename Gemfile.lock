@@ -65,12 +65,15 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap3-datetimepicker-rails (4.7.14)
+      momentjs-rails (>= 2.8.1)
     bourbon (4.2.3)
       sass (~> 3.4)
       thor
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
+    chronic (0.10.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -116,6 +119,8 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.8.0)
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -198,10 +203,13 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   bootstrap-sass (~> 3.3.5)
+  bootstrap3-datetimepicker-rails (~> 4.7.14)
   byebug
+  chronic
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.9.0)
   nokogiri
   rails (= 4.2.3)
   sass-rails (~> 5.0)
