@@ -25,7 +25,7 @@
                 <div class='col-md-5'>
                     <div class="form-group">
                         <div class='input-group date' id='datetimepicker6'>
-                            <input type='text' class="form-control" name="start" id="start" value = <%= %> />
+                            <input type='text' class="form-control" name="start" id="start" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -79,9 +79,14 @@
 <!-- End responsive panel example -->
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker6').datetimepicker({
+                format: 'MM/DD/YYYY'
+            });
+
         $('#datetimepicker7').datetimepicker({
-            useCurrent: false //Important! See issue #1075
+            useCurrent: false, //Important! See issue #1075
+            format: 'MM/DD/YYYY'
+
         });
         $("#datetimepicker6").on("dp.change", function (e) {
             $('#datetimepicker7').data("DateTimePicker").minDate(e.date);

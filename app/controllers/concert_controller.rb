@@ -20,7 +20,8 @@ class ConcertController < ApplicationController
 
   def results
     @venue = Venue.find(params[:venue_id])
-    @events = Event.all
+    @events = Event.where("date > ? and date < ?", DateTime.strptime("#{params[:start]}", "%m/%d/%Y"), DateTime.strptime("#{params[:end]}", "%m/%d/%Y"))
+
     @start_date = params[:start]
     @end_date = params[:end]
 
