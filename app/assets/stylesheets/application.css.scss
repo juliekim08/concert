@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-datetimepicker
+ *= require select2
+ *= require select2-bootstrap
  */
 
 @import "bootstrap-sprockets";
@@ -45,4 +47,17 @@ button {
 font-family: Arial;
 font-size: 10px;
 float: right;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  background-color: #c3eee7;
+  width: 300px;
 }

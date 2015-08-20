@@ -19,6 +19,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'chronic'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+gem "select2-rails"
 
 
 # Use jquery as the JavaScript library
