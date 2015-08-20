@@ -15,6 +15,8 @@ venues = [
 ]
 venues.push({:name => 'Schubas', :url => "http://feeds.feedburner.com/SchubasCalendar?format=xml"})
 venues.push({:name => 'Metro', :url => "http://metrochicago.com/feed/"})
+venues.push({:name => 'Empty Bottle', :url => "http://emptybottle.com/full/"})
+
 venues.each do |venue_hash|
 Venue.create(venue_hash)
 end
